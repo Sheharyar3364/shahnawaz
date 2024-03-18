@@ -1,0 +1,82 @@
+<form action="<?php echo $block->getUrl('contactform/index/post'); ?>" method="post" class="form contact" id="contact-form" data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <legend class="legend"><span>Write Us</span></legend>
+        <div class="field note no-label">
+            Jot us a note and we’ll get back to you as quickly as possible.
+        </div>
+        <div class="field name required">
+            <label class="label" for="name"><span>Name</span></label>
+            <div class="control">
+                <input name="name" id="name" title="Name" class="input-text" type="text" data-validate="{required:true}"  value="<?php echo $block->escapeHtml($block->getLoggedInCustomerName()); ?>">
+            </div>
+        </div>
+        <div class="field email required">
+            <label class="label" for="email"><span>Email</span></label>
+            <div class="control">
+                <input name="email" id="email" title="Email" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}" data-mage-init='{"mage/trim-input":{}}'  value="<?php echo $block->escapeHtml($block->getLoggedInCustomerEmail()); ?>">
+            </div>
+        </div>
+        <div class="field telephone">
+            <label class="label" for="phone"><span>Phone Number</span></label>
+            <div class="control">
+                <input name="phone" id="phone" title="Phone Number" class="input-text" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+            </div>
+        </div>
+        <div class="field services">
+            <label class="label"><span>What services are you interested in?</span></label><br>
+            <div class="control">
+                <input type="hidden" name="web_app" value="no">
+                <input type="checkbox" id="web_app" name="web_app" class="input-checkbox" value="yes">
+                <label for="web_app">Web App</label><br>
+                <input type="hidden" name="mobile_app" value="no">
+                <input type="checkbox" id="mobile_app" name="mobile_app" class="input-checkbox" value="yes">
+                <label for="mobile_app">Mobile App</label><br>
+                <input type="hidden" name="desktop_app" value="no">
+                <input type="checkbox" id="desktop_app" name="desktop_app" class="input-checkbox" value="yes">
+                <label for="desktop_app">Desktop App</label>
+            </div>
+        </div>
+        <div class="field hear-about">
+            <label class="label"><span>How did you hear about us?</span></label><br>
+            <div class="control">
+                <input type="radio" id="social_media" name="hear_about" class="input-radio" value="social_media">
+                <label for="social_media">Social Media</label><br>
+                <input type="radio" id="friends_family" name="hear_about" class="input-radio" value="friends_family">
+                <label for="friends_family">Friends/Family</label><br>
+                <input type="radio" id="online_search" name="hear_about" class="input-radio" value="online_search">
+                <label for="online_search">Online Search</label>
+            </div>
+        </div>
+        <div class="field message required">
+            <label class="label" for="message"><span>Message</span></label>
+            <div class="control">
+                <textarea name="message" id="message" title="Message" class="input-text" rows="5" required></textarea>
+            </div>
+        </div>
+        <!-- New field with date input type -->
+        <div class="field new-field required">
+            <label class="label" for="new-field"><span>Date</span></label>
+            <div class="control">
+                <input name="date" id="date" title="Date" class="input-text" type="date" data-validate="{required:true}">
+            </div>
+        </div>
+        <!-- New field with select dropdown -->
+        <div class="field new-field required">
+            <label class="label" for="new-field-select"><span>Select Option</span></label>
+            <div class="control">
+                <select name="select_option" id="new-field-select" class="input-select" required>
+                    <option value="">Select an option</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value="">
+            <button type="submit" title="Submit" class="action submit primary"><span>Submit</span></button>
+        </div>
+    </div>
+</form>

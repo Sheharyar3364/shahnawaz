@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="fme_contact_form" resource="default" engine="innodb" comment="Contact Form Table">
+        <column xsi:type="int" name="contact_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Contact ID"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Name"/>
+        <column xsi:type="varchar" name="email" nullable="false" length="255" comment="Email"/>
+        <column xsi:type="varchar" name="phone" nullable="false" length="20" comment="Phone"/>
+        <column xsi:type="text" name="message" nullable="false" comment="Message"/>
+        <column xsi:type="varchar" name="web_app" nullable="false" length="3" comment="Interested in Web App"/>
+        <column xsi:type="varchar" name="mobile_app" nullable="false" length="3" comment="Interested in Mobile App"/>
+        <column xsi:type="varchar" name="desktop_app" nullable="false" length="3" comment="Interested in Desktop App"/>
+        <column xsi:type="varchar" name="hear_about" nullable="false" length="255" comment="How did you hear about us?"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <!-- New columns for date and select -->
+        <column xsi:type="date" name="date" nullable="false" comment="Date"/>
+        <column xsi:type="varchar" name="select_option" nullable="false" length="255" comment="Select Option"/>
+        <!-- Primary key constraint -->
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="contact_id"/>
+        </constraint>
+    </table>
+</schema>
